@@ -1,16 +1,16 @@
 from django.shortcuts import render
-from rest_framework.generics import GenericAPIView
-from rest_framework.views import APIView
-from .serializers import UserSerializer
-from rest_framework.response import Response
-from rest_framework import status
-from .serializers import UserSerializer, LoginSerializer
 from django.conf import settings
 from django.contrib import auth
 from django.contrib.auth import login as django_login, logout as django_logout
-import jwt
+
+from rest_framework.generics import GenericAPIView
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
+
+from .serializers import UserSerializer, LoginSerializer
 # Create your views here.
 
 class RegisterView(GenericAPIView):
